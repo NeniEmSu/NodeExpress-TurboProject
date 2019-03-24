@@ -13,6 +13,18 @@ router.get('/', (req, res) => {
 	})
 })
 
+// types of requests
+// Post Get Put Delete
+
+// router.post('/post', (req, res) => {
+// 	const body = req.body //comes from a post form
+
+// 	res.json({
+// 		confirmation: 'success',
+// 		data: body
+// 	})
+// })
+
 router.get('/query', (req, res) => {
 	const name = req.query.name
 	const occupation = req.query.occupation
@@ -23,10 +35,6 @@ router.get('/query', (req, res) => {
 	}
 
 	res.render('profile', data);
-	// res.json({
-	// 	name: name,
-	// 	occupation: occupation
-	// });
 })
 
 router.get('/test', (req, res) => {

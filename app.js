@@ -33,10 +33,12 @@ const app = vertex.app(config) // initialize app with config options
 
 // import routes
 const index = require('./routes/index')
+const register = require('./routes/register')
 
 
 // set routes
 app.use('/', index)
+app.use('/register', register)
 
 
 

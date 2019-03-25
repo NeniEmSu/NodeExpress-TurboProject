@@ -5,31 +5,12 @@ const vertex = require('vertex360')({
 
 const app = vertex.express() // initialize app
 
-
-/*  
-	Apps can also be initialized with config options as shown in the commented out example below. Options
-	include setting views directory, static assets directory, and database settings. To see default config
-	settings, view here: https://www.turbo360.co/docs 
-
-const config = {
-	views: 'views', 		// Set views directory 
-	static: 'public', 		// Set static assets directory
-	db: { 					// Database configuration. Remember to set env variables in .env file: MONGODB_URI, PROD_MONGODB_URI
-		url: (process.env.TURBO_ENV == 'dev') ? process.env.MONGODB_URI : process.env.PROD_MONGODB_URI,
-		type: 'mongo',
-		onError: (err) => {
-			console.log('DB Connection Failed!')
-		},
-		onSuccess: () => {
-			console.log('DB Successfully Connected!')
-		}
-	}
-}
-
-const app = vertex.app(config) // initialize app with config options
-
-*/
-
+// using middle-warefunction to specify logic and avoid repetitions
+app.use((req, res, next) => {
+	const timestamp = new Date()
+	req.timestamp = timestamp.toString()
+	next()
+})
 
 // import routes
 const index = require('./routes/index')

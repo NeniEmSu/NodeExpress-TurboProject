@@ -1,0 +1,13 @@
+body {
+    background: darkgray;
+}
+
+h1 {
+    text-transform: capitalize;
+    color: aliceblue;
+}
+
+img {
+    width: auto;
+    height: 200px;
+}

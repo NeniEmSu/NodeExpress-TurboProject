@@ -5,17 +5,13 @@
 <link rel="stylesheet" href="/css/styles.css" type="text/css" />
 <body class="container">
 <span>{{timestamp}}</span>
-    <h1>Name: {{name}}</h1>
-    <img src="{{image}}" class="img-fluid thumbnail rounded" />
-    <h2>Company: {{company}}</h2>
-
-    <h3>Languages</h3>
+    <h1>Profiles</h1>
     <ol>
-    {{#languages}}
-    <li>
-    {{.}}
+    {{#profiles}}
+    <li><a href="/profile/{{username}}">
+    {{name}}</a>
     </li>
-    {{/languages}}
+    {{/profiles}}
     </ol>
 
     <form action="/addprofile" method="POST">
